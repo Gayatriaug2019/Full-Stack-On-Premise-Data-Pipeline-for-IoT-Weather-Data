@@ -55,21 +55,32 @@ You are tasked with building an **on-premise data engineering pipeline** that:
 weather-data-pipeline/
 │
 ├── airflow/
-│ └── dags/
-│ ├── weather_to_kafka_dag.py
-│ └── batch_etl_dag.py
+│   ├── dags/
+│   │   ├── batch_etl_dag.py
+│   │   ├── faker_csv_dag.py
+│   │   ├── faker_mysql_dag.py
+│   │   └── weather_to_kafka_dag.py
 │
 ├── kafka/
-│ └── weather_producer.py
+│ └── weather_to_kafka.py
 │
 ├── faker/
-│ ├── faker_to_csv.py
-│ └── faker_to_mysql.py
+│   ├── generate_csv.py
+│   └── insert_fake_mysql.py
 │
 ├── spark/
 │ ├── streaming_kafka_to_parquet.py
-│ └── batch_etl.py
+│ ├── batch_etl.py
+│ └── last_etl_timestamp.txt
 │
+├── csv_parquet_storage/
+│   ├── fake_weather.csv
+│   │
+│   ├── parquet_output/
+│   │   └── part-00000-6dd5899c-d930-479c-ac12-4dbb4f9808ba-c000.snappy.parquet
+│   │
+│   └── hive_final_table_export/
+│       └── part-00000-6ddcee01-6085-4af2-acc9-894bd7b5b796-c000.csv
 ├── hive/
 │ └── create_hive_tables.sql
 │
