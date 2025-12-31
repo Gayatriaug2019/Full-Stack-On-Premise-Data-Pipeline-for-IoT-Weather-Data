@@ -169,7 +169,6 @@ weather-topic
 
 ### Step 1: Start Kafka Producer
 bash
-Copy code
 python kafka/weather_producer.py
 
 Step 2: Run Faker Data Generators
